@@ -9,7 +9,7 @@ export const addContact = ({ firstName, lastName, phoneNumber, email, address, p
     let contacts = localStorage.getItem('contacts') ?? '[]';
     contacts = JSON.parse(contacts)
 
-    contacts.push({
+    const newContact = {
         id: uuidv4(),
         firstName,
         lastName,
@@ -17,8 +17,12 @@ export const addContact = ({ firstName, lastName, phoneNumber, email, address, p
         email,
         address,
         profilePic
-    });
+    };
+
+    contacts.push(newContact);
     localStorage.setItem('contacts', JSON.stringify(contacts));
+    
+    return newContact;
 }
 
 export const deleteContact = ({ id }) => {
