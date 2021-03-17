@@ -25,7 +25,7 @@ export const addContact = ({ firstName, lastName, phoneNumber, email, address, p
     return newContact;
 }
 
-export const deleteContact = ({ id }) => {
+export const deleteContact = (id) => {
     let contacts = localStorage.getItem('contacts') ?? '[]';
     contacts = JSON.parse(contacts)
     contacts = contacts.filter((contact) => contact.id !== id);
