@@ -1,8 +1,9 @@
+import { Container } from "react-bootstrap";
 import ContactCard from "./ContactCard"
 
 const ContactList = ({ contacts=[] }) => {
     return (
-        <div>
+        <Container style={{backgroundColor: 'lightgrey', padding: '.25rem 0rem 1rem'}}>
             {contacts.map((contact) => 
                 <ContactCard 
                     key={contact.id}
@@ -12,7 +13,7 @@ const ContactList = ({ contacts=[] }) => {
                     profilePic={contact.profilePic}
                 />
             )}
-        </div>
+        </Container>
     )
 }
 
